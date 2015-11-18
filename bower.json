@@ -1,0 +1,26 @@
+{
+  "name": "einar-app",
+  "version": "0.0.2",
+  "homepage": "",
+  "authors": [
+    "fizk <fizk78@gmail.com>"
+  ],
+  "description": "Einar App",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper-elements": "PolymerElements/paper-elements#~1.0.5",
+    "iron-elements": "PolymerElements/iron-elements#~1.0.4",
+    "neon-animation": "PolymerElements/neon-animation#~1.0.8",
+    "polymer": "~1.2.1",
+    "page": "~1.6.4",
+    "breakpoint-sass": "~2.6.1"
+  }
+}

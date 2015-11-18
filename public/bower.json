@@ -1,0 +1,19 @@
+{
+  "name": "public",
+  "version": "0.0.0",
+  "authors": [
+    "fizk <einar@99designs.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "webcomponentsjs": "~0.7.18"
+  }
+}

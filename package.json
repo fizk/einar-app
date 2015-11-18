@@ -1,0 +1,22 @@
+{
+  "name": "einar-app",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node_modules/nodemon/bin/nodemon.js ./bin/www localhost 3000"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-vulcanize": "^6.0.1",
+    "gulp-watch": "^4.3.5",
+    "morgan": "~1.6.1",
+    "nodemon": "^1.8.1",
+    "serve-favicon": "~2.3.0",
+    "swig": "^1.4.2"
+  }
+}
