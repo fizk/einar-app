@@ -1,0 +1,26 @@
+<link rel="import" href="../../../vendor/polymer/polymer.html">
+
+<dom-module id="fizk-cv-education">
+    <link rel="import" type="css" href="fizk-cv-education.css">
+    <template>
+        <dl class="education">
+            <dt class="education__date">{{education.from}} - {{education.to}}</dt>
+            <dd class="education__meta">
+                <h1 class="education__name">{{education.name}}</h1>
+                <p class="education__description">{{education.description}}</p>
+            </dd>
+        </dl>
+    </template>
+    <script>
+        Polymer({
+            is: 'fizk-cv-education',
+
+            properties: {
+                education: {
+                    type: Object,
+                    value: {}
+                }
+            }
+        });
+    </script>
+</dom-module>

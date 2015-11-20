@@ -1,0 +1,31 @@
+@import "../../sass/base";
+
+:host {
+    display: block;
+}
+
+.job {
+    display: flex;
+}
+
+.job__date {
+    width: 300px;
+    text-align: right;
+    padding: $gutter/4 $gutter/2;
+}
+.job__meta {
+    flex-grow: 1;
+    padding: $gutter/4 $gutter/2;
+}
+
+.job__name {
+    font-size: 16px;
+    font-weight: $font-weight-bold;
+}
+.job__title {
+    font-size: 16px;
+    font-weight: normal;
+}
+.job__description {
+    font-style: italic;
+}

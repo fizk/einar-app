@@ -1,0 +1,26 @@
+<link rel="import" href="../../../vendor/polymer/polymer.html">
+
+<dom-module id="fizk-cv-project">
+    <link rel="import" type="css" href="fizk-cv-project.css">
+    <template>
+        <dl class="project">
+            <dt class="project__name">{{project.name}}</dt>
+            <dd class="project__meta">
+                <a href="{{project.link.href}}">{{project.link.title}}</a>
+                <p class="project__description">{{project.description}}</p>
+            </dd>
+        </dl>
+    </template>
+    <script>
+        Polymer({
+            is: 'fizk-cv-project',
+
+            properties: {
+                project: {
+                    type: Object,
+                    value: {}
+                }
+            }
+        });
+    </script>
+</dom-module>

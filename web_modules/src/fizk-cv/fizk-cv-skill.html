@@ -1,0 +1,29 @@
+<link rel="import" href="../../../vendor/polymer/polymer.html">
+
+<dom-module id="fizk-cv-skill">
+    <link rel="import" type="css" href="fizk-cv-skill.css">
+    <template>
+        <dl class="skill">
+            <dt class="skill__name">{{skill.title}}</dt>
+            <dd class="skill__list">
+                <ul>
+                    <template is="dom-repeat" items="{{skill.items}}">
+                        <li class="skill__list-item">{{item}}</li>
+                    </template>
+                </ul>
+            </dd>
+        </dl>
+    </template>
+    <script>
+        Polymer({
+            is: 'fizk-cv-skill',
+
+            properties: {
+                skill: {
+                    type: Object,
+                    value: {}
+                }
+            }
+        });
+    </script>
+</dom-module>

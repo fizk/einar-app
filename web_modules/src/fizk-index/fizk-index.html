@@ -1,0 +1,17 @@
+<link rel="import" href="../../../vendor/polymer/polymer.html">
+
+<dom-module id="fizk-index">
+    <template>
+        <a href="#" on-click="handleGetCv">CV</a>
+    </template>
+    <script>
+        Polymer({
+            is: 'fizk-index',
+
+            handleGetCv: function (event) {
+                event.preventDefault();
+                this.fire('request-cv')
+            }
+        });
+    </script>
+</dom-module>

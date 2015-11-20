@@ -1,0 +1,27 @@
+@import "../../sass/base";
+
+:host {
+    display: block;
+}
+
+.education {
+    display: flex;
+}
+
+.education__date {
+    text-align: right;
+    width: 300px;
+    padding: $gutter/8 $gutter/2;
+}
+.education__meta {
+    flex-grow: 1;
+    padding: $gutter/8 $gutter/2;
+}
+
+.education__name {
+    font-size: 16px;
+    font-weight: $font-weight-bold;
+}
+.education__description {
+    font-style: italic;
+}

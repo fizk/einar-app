@@ -1,0 +1,9 @@
+@import "../../sass/base";
+
+.category {
+    display: flex;
+    padding: $gutter;
+    border-bottom: 1px dotted $color-gray-light;
+}
+.category_title {}
+.category_body {}
