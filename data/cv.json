@@ -1,0 +1,160 @@
+{
+    "education": [
+        {
+            "from": 2011,
+            "to": 2012,
+            "name": "Háskólinn i Reykjavik",
+            "description": "BS Tölvunarfrædi"
+        }, {
+            "from": 2000,
+            "to": 2003,
+            "name": "Listaháskóli Íslands",
+            "description": "BA Myndlist"
+        }, {
+            "from": 1997,
+            "to": 2000,
+            "name": "Fjölbrautaskolinn í Breidholdi"
+        }, {
+            "from": 1995,
+            "to": 1996,
+            "name": "Fjölbrautaskoli Sudurnesja"
+        }
+    ],
+    "jobs": [
+        {
+            "from": 2014,
+            "to": 2015,
+            "name": "99 Designs (Australia)",
+            "title": "Fram- og bakendaforritari",
+            "description": "PHP, Symfony, JS, React, AWS, Docker"
+        },
+        {
+            "from": 2014,
+            "to": 2014,
+            "name": "Dropbox (USA)",
+            "title": "Framendaforritari",
+            "description": "Python, SASS, JS"
+        },
+        {
+            "from": 2012,
+            "to": 2014,
+            "name": "Kosmos&Kaos",
+            "title": "Fram- og bakendaforritari",
+            "description": "Drupal, PHP, Node, JS, SASS, MySQL"
+        }, {
+            "from": 2011,
+            "to": "-",
+            "name": "isProject",
+            "title": "Forritari, kerfisönnudur, grafískur hönnudur, kerfisstjóri, framkvæmdarstjóri",
+            "description": "Zend, PHP, Python, Django, JS, CSS"
+        }, {
+            "from": 2009,
+            "to": 2010,
+            "name": "GogoYoko",
+            "title": "Fram- og bakendaforritari",
+            "description": "Einn af hönnudum GogoYoko, CodeIgniter, PHP, JS CSS"
+        }, {
+            "from": 2007,
+            "to": 2009,
+            "name": "Allra Átta",
+            "title": "Fram- og bakendaforritari, kerfishönnudur, yfirmadur thrógunardeildar",
+            "description": "PHP, Zend, MySQL, JS, CSS"
+        }, {
+            "from": 2007,
+            "to": 2007,
+            "name": "BM Rádgjof",
+            "title": "Forritari",
+            "description": "PHP, Zend, MySQL, JS, CSS"
+        }, {
+            "from": 2006,
+            "to": 2006,
+            "name": "Hexia Software",
+            "title": "Framendaforritari",
+            "description": "JS"
+        }, {
+            "from": 2003,
+            "to": 2003,
+            "name": "Skaftfell menningarmidstöd",
+            "title": "Grafiskur hönnudur, vefforritari, kokkur",
+            "description": "PHP, MySQL, JS, CSS"
+        }, {
+            "from": 2001,
+            "to": 2001,
+            "name": "Spelka Auglysingarstofa",
+            "title": "Grafiskur hönnudur",
+            "description": "Photoshop, Illustrator"
+        }
+    ],
+    "awards": [
+        {
+            "date": 2013,
+            "name": "Besti vefurinn (SVEF)",
+            "description": "Bláa lónid (http://bluelagoon.com). \"Besti vefurinn 2013\"."
+        }
+    ],
+    "skills": [
+        {
+            "title": "PHP",
+            "items": [
+                "Zend", "Drupal", "Wordpress", "Symfony"
+            ]
+        }, {
+            "title": "JavaScript",
+            "items": [
+                "ES5", "ES6", "React", "Polymer", "jQuery"
+            ]
+        }, {
+            "title": "Java",
+            "items": [
+                "Spring/Hibernate", "Android", "OpenGL ES"
+            ]
+        }, {
+            "title": "Python",
+            "items": [
+                "Django"
+            ]
+        }, {
+            "title": "ActionScript / Flex",
+            "items": []
+        }, {
+            "title": "CSS",
+            "items": [
+                "CSS", "CSS3", "LESS", "SASS", "Compass"
+            ]
+        }, {
+            "title": "HTML / HTML5 / XML",
+            "items": []
+        }, {
+            "title": "C C++ C# (.NET)",
+            "items": []
+        }, {
+            "title": "SQL",
+            "items": [
+                "MySQL"
+            ]
+        }, {
+            "title": "Unix",
+            "items": [
+                "Linux", "Ubuntu", "CentOS", "OS X"
+            ]
+        }, {
+            "title": "Pre-prosessor",
+            "items": [
+                "Gulp", "Webpack"
+            ]
+        }, {
+            "title": "Myndvinnsla",
+            "items": [
+                "Photoshop", "Illustrator", "Sketch", "InDesign"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "Stjornvisi",
+            "link": {"title": "stjornvisi", "href":"http://stjornvisi.is"},
+            "description": "Blehh"
+        }
+    ],
+    "description": ""
+}

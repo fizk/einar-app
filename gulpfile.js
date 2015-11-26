@@ -5,13 +5,13 @@ var sass = require('gulp-sass');
 
 gulp.task('watch', function () {
     gulp.watch('./web_modules/src/**/*.scss', ['sass', 'vulcanize']);
-    gulp.watch('./web_modules/src/**/*.html', ['vulcanize']);
+    gulp.watch('./web_modules/src/**/*.html', ['sass', 'vulcanize']);
 });
 
 gulp.task('sass', function () {
     gulp.src('./web_modules/src/**/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./src'));
+        .pipe(gulp.dest('./web_modules/src'));
 });
 
 gulp.task('vulcanize', ['sass'], function () {

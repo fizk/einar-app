@@ -1,0 +1,22 @@
+@import "../../sass/base";
+
+:host {
+    display: block;
+}
+
+.award {
+    display: flex;
+}
+.award__date {
+    width: 300px;
+    text-align: right;
+    padding: $gutter/2;
+}
+.award__meta {
+    flex-grow: 1;
+    padding: $gutter/2;
+}
+.award__name {
+    font-size: 16px;
+}
+.award__description {}

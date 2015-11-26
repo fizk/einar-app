@@ -1,0 +1,127 @@
+<link rel="import" href="../../../vendor/polymer/polymer.html">
+<link rel="import" href="../../../vendor/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../../vendor/neon-animation/neon-animation-runner-behavior.html">
+<link rel="import" href="../../../vendor/neon-animation/animations/fade-in-animation.html">
+<link rel="import" href="../../../vendor/neon-animation/animations/fade-out-animation.html">
+
+<link rel="import" href="./fizk-cv-education.html">
+<link rel="import" href="./fizk-cv-job.html">
+<link rel="import" href="./fizk-cv-skill.html">
+<link rel="import" href="./fizk-cv-awards.html">
+<link rel="import" href="./fizk-cv-project.html">
+<link rel="import" href="./fizk-cv-category.html">
+
+<dom-module id="fizk-cv">
+    <link rel="import" type="css" href="fizk-cv.css">
+    <template>
+        <iron-ajax
+                id="ironAjax"
+            url="/api/cv"
+            handle-as="json"
+            on-request="handleRequest"
+            on-response="handleResponse"
+            debounce-duration="300">
+        </iron-ajax>
+
+        <fizk-cv-category name="Education">
+            <template is="dom-repeat" items="{{education}}">
+                <fizk-cv-education education="{{item}}"></fizk-cv-education>
+            </template>
+        </fizk-cv-category>
+
+        <fizk-cv-category name="Jobs">
+            <template is="dom-repeat" items="{{jobs}}">
+                <fizk-cv-job job="{{item}}"></fizk-cv-job>
+            </template>
+        </fizk-cv-category>
+
+        <fizk-cv-category name="Skills">
+            <template is="dom-repeat" items="{{skills}}">
+                <fizk-cv-skill skill="{{item}}"></fizk-cv-skill>
+            </template>
+        </fizk-cv-category>
+
+        <fizk-cv-category name="Awards">
+            <template is="dom-repeat" items="{{awards}}">
+                <fizk-cv-awards award="{{item}}"></fizk-cv-awards>
+            </template>
+        </fizk-cv-category>
+
+        <fizk-cv-category name="Projects">
+            <template is="dom-repeat" items="{{projects}}">
+                <fizk-cv-project project="{{item}}"></fizk-cv-project>
+            </template>
+        </fizk-cv-category>
+    </template>
+    <script>
+        Polymer({
+            is: 'fizk-cv',
+
+            behaviors: [
+                Polymer.NeonAnimationRunnerBehavior
+            ],
+
+            properties: {
+                education: {
+                    type: Array,
+                    value: []
+                },
+                jobs: {
+                    type: Array,
+                    value: []
+                },
+                skills: {
+                    type: Array,
+                    value: []
+                },
+                awards: {
+                    type: Array,
+                    value: []
+                },
+                projects: {
+                    type: Array,
+                    value: []
+                },
+
+                fetch: {
+                    type: Boolean,
+                    value: false,
+                    observer: '_fetchData'
+                },
+
+                animationConfig: {
+                    value: function() {
+                        return {
+                            'entry': {
+                                // provided by neon-animation/animations/scale-up-animation.html
+                                name: 'fade-in-animation',
+                                node: this
+                            },
+                            'exit': {
+                                // provided by neon-animation-animations/fade-out-animation.html
+                                name: 'fade-out-animation',
+                                node: this
+                            }
+                        }
+                    }
+                }
+            },
+
+            _fetchData: function (newValue, oldValue) {
+                if (newValue === true) {
+                    this.$.ironAjax.generateRequest();
+                }
+            },
+
+            handleRequest: function () {},
+
+            handleResponse: function (event) {
+                this.education = event.detail.response.education;
+                this.jobs = event.detail.response.jobs;
+                this.skills = event.detail.response.skills;
+                this.awards = event.detail.response.awards;
+                this.projects = event.detail.response.projects;
+            }
+        });
+    </script>
+</dom-module>

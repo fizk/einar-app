@@ -1,0 +1,26 @@
+<link rel="import" href="../../../vendor/polymer/polymer.html">
+
+<dom-module id="fizk-cv-awards">
+    <link rel="import" type="css" href="fizk-cv-awards.css">
+    <template>
+        <dl class="award">
+            <dt class="award__date">{{award.date}}</dt>
+            <dd class="award__meta">
+                <h1 class="award__name">{{award.name}}</h1>
+                <p class="award__description">{{award.description}}</p>
+            </dd>
+        </dl>
+    </template>
+    <script>
+        Polymer({
+            is: 'fizk-cv-awards',
+
+            properties: {
+                award: {
+                    type: Object,
+                    value: {}
+                }
+            }
+        });
+    </script>
+</dom-module>

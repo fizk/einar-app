@@ -1,15 +1,46 @@
 <link rel="import" href="../../vendor/polymer/polymer.html">
+<link rel="import" href="../../vendor/neon-animation/neon-animated-pages.html">
+
+<link rel="import" href="./fizk-cv/fizk-cv.html">
+<link rel="import" href="./fizk-index/fizk-index.html">
 
 <dom-module id="app-app">
+    <script src="../../vendor/page/page.js"></script>
     <template>
-        <h1>Hello Wold</h1>
+        <neon-animated-pages id="pages" selected="0">
+            <fizk-index on-request-cv="handleShowCv"></fizk-index>
+            <fizk-cv id="fizkCvPage"></fizk-cv>
+        </neon-animated-pages>
     </template>
     <script>
         Polymer({
             is: 'app-app',
 
-            properties: {
+            ready: function () {
 
+                page('/', function (ctx, next) {
+                    this._handleShowIndex();
+                }.bind(this));
+
+                page('/cv', function (ctx, next) {
+                    this._handleShowCv();
+                }.bind(this));
+
+                page();
+            },
+
+            handleShowCv: function () {
+                page('/cv');
+                this._handleShowCv();
+            },
+
+            _handleShowCv: function () {
+                this.$.pages.selected = 1;
+                this.$.fizkCvPage.setAttribute('fetch', true);
+            },
+
+            _handleShowIndex: function () {
+                this.$.pages.selected = 0;
             }
         })
     </script>

@@ -1,0 +1,19 @@
+@import "../../sass/base";
+
+:host {
+    display: block;
+}
+
+.project {
+    display: flex;
+}
+.project__name {
+    width: 300px;
+    text-align: right;
+    font-weight: bold;
+    padding: $gutter/2;
+}
+.project__description {
+    flex-grow: 1;
+    padding: $gutter/2;
+}

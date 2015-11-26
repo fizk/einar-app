@@ -1,0 +1,26 @@
+<link rel="import" href="../../../vendor/polymer/polymer.html">
+<link rel="import" href="../../../vendor/iron-ajax/iron-ajax.html">
+
+<dom-module id="fizk-cv-category">
+    <link rel="import" type="css" href="fizk-cv-category.css">
+    <template>
+        <div class="category">
+            <div class="category__title">{{name}}:</div>
+            <div class="category_body">
+                <content></content>
+            </div>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            is: 'fizk-cv-category',
+
+            properties: {
+                name: {
+                    type: String,
+                    value: []
+                }
+            }
+        });
+    </script>
+</dom-module>

@@ -1,0 +1,23 @@
+@import "../../sass/base";
+
+:host {
+    display: block;
+}
+
+.skill {
+    display: flex;
+}
+.skill__name {
+    width: 300px;
+    text-align: right;
+    font-weight: bold;
+    padding: $gutter/2;
+}
+.skill__list {
+    flex-grow: 1;
+    padding: $gutter/2;
+     ul {
+         list-style: none;
+     }
+}
+.skill__list-item {}

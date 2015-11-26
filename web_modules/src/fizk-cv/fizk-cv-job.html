@@ -1,0 +1,27 @@
+<link rel="import" href="../../../vendor/polymer/polymer.html">
+
+<dom-module id="fizk-cv-job">
+    <link rel="import" type="css" href="fizk-cv-job.css">
+    <template>
+        <dl class="job">
+            <dt class="job__date">{{job.from}} - {{job.to}}</dt>
+            <dd class="job__meta">
+                <h1 class="job__name">{{job.name}}</h1>
+                <h2 class="job__title">{{job.title}}</h2>
+                <p class="job__description">{{job.description}}</p>
+            </dd>
+        </dl>
+    </template>
+    <script>
+        Polymer({
+            is: 'fizk-cv-job',
+
+            properties: {
+                job: {
+                    type: Object,
+                    value: {}
+                }
+            }
+        });
+    </script>
+</dom-module>
