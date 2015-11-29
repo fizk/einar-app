@@ -2,13 +2,14 @@
 <link rel="import" href="../../vendor/neon-animation/neon-animated-pages.html">
 
 <link rel="import" href="./fizk-cv/fizk-cv.html">
+<link rel="import" href="./fizk-entries/fizk-entries-list.html">
 <link rel="import" href="./fizk-index/fizk-index.html">
 
 <dom-module id="app-app">
     <script src="../../vendor/page/page.js"></script>
     <template>
         <neon-animated-pages id="pages" selected="0">
-            <fizk-index on-request-cv="handleShowCv"></fizk-index>
+            <fizk-entries-list id="fizkEntriesList"></fizk-entries-list>
             <fizk-cv id="fizkCvPage"></fizk-cv>
         </neon-animated-pages>
     </template>
@@ -41,6 +42,7 @@
 
             _handleShowIndex: function () {
                 this.$.pages.selected = 0;
+                this.$.fizkEntriesList.setAttribute('fetch', true);
             }
         })
     </script>
