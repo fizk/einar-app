@@ -1,0 +1,55 @@
+<link rel="import" href="../../../vendor/polymer/polymer.html">
+<link rel="import" href="../../../vendor/iron-ajax/iron-ajax.html">
+
+<dom-module id="fizk-entries-list">
+    <link rel="import" type="css" href="fizk-entries-list.css">
+    <template>
+        <iron-ajax
+                id="ironAjax"
+                url="/api/entries"
+                handle-as="json"
+                on-request="handleRequest"
+                on-response="handleResponse"
+                debounce-duration="300">
+        </iron-ajax>
+        <template is="dom-repeat" items="{{entries}}">
+            <h1>{{item.title}}</h1>
+        </template>
+    </template>
+    <script>
+        Polymer({
+            is: 'fizk-entries-list',
+
+            properties: {
+                award: {
+                    type: Object,
+                    value: {}
+                },
+
+                entries: {
+                    type: Array,
+                    value: []
+                },
+
+                fetch: {
+                    type: Boolean,
+                    value: false,
+                    observer: '_fetchData'
+                }
+            },
+
+
+            _fetchData: function (newValue, oldValue) {
+                if (newValue === true) {
+                    this.$.ironAjax.generateRequest();
+                }
+            },
+
+            handleRequest: function () {},
+
+            handleResponse: function (event) {
+                this.entries = event.detail.response;
+            }
+        });
+    </script>
+</dom-module>

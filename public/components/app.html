@@ -10215,6 +10215,52 @@ h1, h2, h3, h4, h5, h6 {
         });
     </script>
 </dom-module>
+<dom-module id="fizk-entries-list" assetpath="fizk-entries/">
+    <link rel="import" type="css" href="fizk-entries/fizk-entries-list.css">
+    <template>
+        <iron-ajax id="ironAjax" url="/api/entries" handle-as="json" on-request="handleRequest" on-response="handleResponse" debounce-duration="300">
+        </iron-ajax>
+        <template is="dom-repeat" items="{{entries}}">
+            <h1>{{item.title}}</h1>
+        </template>
+    </template>
+    <script>
+        Polymer({
+            is: 'fizk-entries-list',
+
+            properties: {
+                award: {
+                    type: Object,
+                    value: {}
+                },
+
+                entries: {
+                    type: Array,
+                    value: []
+                },
+
+                fetch: {
+                    type: Boolean,
+                    value: false,
+                    observer: '_fetchData'
+                }
+            },
+
+
+            _fetchData: function (newValue, oldValue) {
+                if (newValue === true) {
+                    this.$.ironAjax.generateRequest();
+                }
+            },
+
+            handleRequest: function () {},
+
+            handleResponse: function (event) {
+                this.entries = event.detail.response;
+            }
+        });
+    </script>
+</dom-module>
 <dom-module id="fizk-index" assetpath="fizk-index/">
     <template>
         <a href="#" on-click="handleGetCv">CV</a>
@@ -11343,7 +11389,7 @@ module.exports = Array.isArray || function (arr) {
 });</script>
     <template>
         <neon-animated-pages id="pages" selected="0">
-            <fizk-index on-request-cv="handleShowCv"></fizk-index>
+            <fizk-entries-list id="fizkEntriesList"></fizk-entries-list>
             <fizk-cv id="fizkCvPage"></fizk-cv>
         </neon-animated-pages>
     </template>
@@ -11376,6 +11422,7 @@ module.exports = Array.isArray || function (arr) {
 
             _handleShowIndex: function () {
                 this.$.pages.selected = 0;
+                this.$.fizkEntriesList.setAttribute('fetch', true);
             }
         })
     </script>
